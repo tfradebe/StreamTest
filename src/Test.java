@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Test{
@@ -8,6 +10,13 @@ public class Test{
         Stream<String> streamString = Stream.of("monkey","gorilla","bonobo");
         Stream<Integer> numStream = streamString.map(String::length);
         numStream.forEach(System.out::println);
+
+        List<String> zero = Arrays.asList();
+        List<String> one = Arrays.asList("Bonobo");
+        List<String> two = Arrays.asList("Mama Gorilla","Baby Gorilla");
+        Stream<List<String>> animals = Stream.of(zero,one,two);
+
+        animals.flatMap(l->l.stream()).forEach(System.out::println);
 
     }
 }
