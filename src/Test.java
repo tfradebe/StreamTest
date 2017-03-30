@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -18,5 +19,7 @@ public class Test{
 
         animals.flatMap(l->l.stream()).forEach(System.out::println);
 
+        Stream<String> streamSorted = Stream.of("brown-","grizzly-");
+        streamSorted.sorted(Comparator.reverseOrder()).forEach(System.out::println);
     }
 }
